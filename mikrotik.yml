@@ -1,0 +1,25 @@
+---
+  - name: add address
+    hosts: ansible
+    roles:
+      - role: address/add
+    tags: add-mikrotik-address
+
+  - name: print router address
+    hosts: ansible
+    roles:
+      - role: address/print
+    vars_files:
+      - roles/address/add/vars/main.yml
+    tags: print-mikrotik-address
+
+  - name: remove address
+    hosts: ansible
+    vars_prompt:
+      - name: "value"
+        prompt: "you want delete this value?"
+    roles:
+      - role: address/remove
+    vars_files:
+      - roles/address/add/vars/main.yml
+    tags: remove-mikrotik-address

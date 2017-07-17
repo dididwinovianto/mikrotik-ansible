@@ -1,0 +1,10 @@
+---
+# router details
+mikrotik_user: admin
+mikrotik_router: 127.0.0.1
+mikrotik_router_port: 2216
+
+# network attributes
+mask: 24
+interface: ether2
+address: 192.169.1.103

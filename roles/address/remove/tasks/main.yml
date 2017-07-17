@@ -1,0 +1,6 @@
+---
+  - name: remove address
+    command: |
+      ssh {{ mikrotik_user }}@{{ mikrotik_router }} -p {{ mikrotik_router_port }}
+      '/ip address remove numbers={{ value }}'
+    tags: remove-address
